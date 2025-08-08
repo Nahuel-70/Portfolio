@@ -20,10 +20,12 @@ const Contact = () => {
             .then(data => {
                 setIsAvailable(data.isAvailable);
                 setLoading(false);
+                setStatus(data.isAvailable ? "idle" : "unavailable");
             })
             .catch(() => {
                 setIsAvailable(false);
                 setLoading(false);
+                setStatus("unavailable");
             });
     }, []);
 
@@ -74,20 +76,23 @@ const Contact = () => {
         sending: t('contact.form.sending'),
         success: t('contact.form.success'),
         error: t('contact.form.error'),
+        unavailable: t('contact.form.unavailable'),
     };
 
     const buttonColors = {
         idle: 'from-primary to-accent',
         sending: 'from-blue-500 to-blue-700',
         success: 'from-green-500 to-green-700',
-        error: 'from-red-500 to-red-700'
+        error: 'from-red-500 to-red-700',
+        unavailable: 'from-gray-500 to-gray-700',
     };
 
     const buttonIcon = {
         idle: null,
         sending: '/icons/sending.svg',
         success: '/icons/like.svg',
-        error: '/icons/dislike.svg'
+        error: '/icons/dislike.svg',
+        unavailable: null,
     };
 
     return (
@@ -241,7 +246,7 @@ const Contact = () => {
                                     className={`w-full py-4 px-8 font-semibold text-lg rounded-2xl mt-auto transition-all duration-300 relative overflow-hidden group bg-gradient-to-r ${buttonColors[status]} text-white hover:scale-105 disabled:cursor-not-allowed`}
                                 >
                                     <span className="relative z-10 flex items-center justify-center gap-2">
-                                        {status !== 'idle' && (
+                                        {status !== 'idle' && status !== 'unavailable' && (
                                             <img
                                                 src={buttonIcon[status]}
                                                 className={`brightness(0) invert(1) w-6 h-6 ${status === 'success' ? 'animate-[pulseSuccess_1s_ease-out]' : ''} ${status === 'error' ? 'animate-[pulseError_1s_ease-out]' : ''}`}
