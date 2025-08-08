@@ -1,13 +1,27 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/src/assets/profile.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nahuel Gonzalez</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/app/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/src/assets/profile.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nahuel Gonzalez</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/app/main.jsx"></script>
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact" />
+    <p style="display:none;">
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+    <input type="text" name="firstName" />
+    <input type="text" name="lastName" />
+    <input type="email" name="email" />
+    <input type="text" name="subject" />
+    <textarea name="message"></textarea>
+  </form>
+</body>
+
 </html>
