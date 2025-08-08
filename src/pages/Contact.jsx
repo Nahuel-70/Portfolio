@@ -10,7 +10,7 @@ import SocialLink from '../components/SocialLink';
 const Contact = () => {
     const [status, setStatus] = useState("idle");
     const { t } = useTranslation();
-    const isAvailable = true;
+    const isAvailable = false;
 
     const schema = yup.object().shape({
         firstName: yup.string().required(t('contact.form.firstNameRequired')).min(2, t('contact.form.minLength').replace('{{length}}', '2')),
@@ -125,7 +125,7 @@ const Contact = () => {
                 <div className="lg:col-span-3">
                     <div className="bg-dark-card/80 backdrop-blur-xl rounded-3xl border border-dark-border p-8 min-h-[600px] relative overflow-hidden">
                         <div className="relative z-10 h-full">
-                            <h3 className="text-2xl font-bold text-text-primary mb-4 flex items-center gap-2">
+                            <h3 className="text-2xl font-bold text-text-primary flex items-center gap-2">
                                 <span
                                     className={`w-4 h-4 rounded-full animate-pulse ${isAvailable ? "bg-green-500" : "bg-danger"
                                         }`}
