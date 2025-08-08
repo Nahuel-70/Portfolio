@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -10,7 +10,22 @@ import SocialLink from '../components/SocialLink';
 const Contact = () => {
     const [status, setStatus] = useState("idle");
     const { t } = useTranslation();
-    const isAvailable = false;
+
+    const [isAvailable, setIsAvailable] = useState(false);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('/api/getAvailability')
+            .then(res => res.json())
+            .then(data => {
+                setIsAvailable(data.isAvailable);
+                setLoading(false);
+            })
+            .catch(() => {
+                setIsAvailable(false);
+                setLoading(false);
+            });
+    }, []);
 
     const schema = yup.object().shape({
         firstName: yup.string().required(t('contact.form.firstNameRequired')).min(2, t('contact.form.minLength').replace('{{length}}', '2')),
@@ -135,9 +150,11 @@ const Contact = () => {
                                             : "0 0 10px 3px rgba(239, 68, 68, 0.8)"
                                     }}
                                 ></span>
-                                {isAvailable
-                                    ? t('contact.status.available')
-                                    : t('contact.status.unavailable')}
+                                {loading ? t('contact.status.loading') : (
+                                    isAvailable
+                                        ? t('contact.status.available')
+                                        : t('contact.status.unavailable')
+                                )}
                             </h3>
 
                             <form
@@ -220,7 +237,7 @@ const Contact = () => {
 
                                 <button
                                     type="submit"
-                                    disabled={!isAvailable || status === 'sending'}
+                                    disabled={loading || !isAvailable || status === 'sending'}
                                     className={`w-full py-4 px-8 font-semibold text-lg rounded-2xl mt-auto transition-all duration-300 relative overflow-hidden group bg-gradient-to-r ${buttonColors[status]} text-white hover:scale-105 disabled:cursor-not-allowed`}
                                 >
                                     <span className="relative z-10 flex items-center justify-center gap-2">
