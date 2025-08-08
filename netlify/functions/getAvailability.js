@@ -4,15 +4,30 @@ const sql = neon();
 
 export const handler = async () => {
   try {
-    const [setting] = await sql`SELECT * FROM settings WHERE key = 'is_available'`;
+    const result = await sql`SELECT value FROM settings WHERE key = 'is_available' LIMIT 1`;
+    
+    const isAvailable = result.length > 0 ? result[0].value === 'true' : false;
+    
     return {
       statusCode: 200,
-      body: JSON.stringify({ isAvailable: setting?.value === 'true' }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ isAvailable }),
     };
+    
   } catch (error) {
+    console.error('Error fetching availability:', error);
+    
     return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Error fetching availability' }),
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        isAvailable: false,
+        error: 'Database error'
+      }),
     };
   }
 };
