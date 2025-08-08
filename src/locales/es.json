@@ -111,7 +111,23 @@
             "subject": "Asunto",
             "message": "Tu mensaje",
             "submit": "Enviar mensaje",
-            "unavailable": "No disponible"
+            "sending": "Enviando...",
+            "success": "¡Mensaje enviado con éxito!",
+            "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+            "unavailable": "No disponible.",
+            "minLength": "La longitud mínima es de {{length}} caracteres",
+            "maxLength": "La longitud máxima es de {{length}} caracteres",
+            "firstNameRequired": "El nombre es obligatorio",
+            "firstNameError": "El nombre debe tener al menos 2 caracteres",
+            "lastNameRequired": "El apellido es obligatorio",
+            "lastNameError": "El apellido debe tener al menos 2 caracteres",
+            "emailRequired": "El correo electrónico es obligatorio",
+            "emailError": "El correo electrónico debe ser una dirección válida",
+            "emailInvalid": "Por favor, introduce una dirección de correo electrónico válida",
+            "subjectRequired": "El asunto es obligatorio",
+            "subjectError": "El asunto debe tener al menos 3 caracteres",
+            "messageRequired": "El mensaje es obligatorio",
+            "messageError": "El mensaje debe tener al menos 10 caracteres"
         }
     }
 }

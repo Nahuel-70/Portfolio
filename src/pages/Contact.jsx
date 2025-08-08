@@ -29,21 +29,30 @@ const Contact = () => {
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (formData) => {
         try {
             setStatus("sending");
 
-            await new Promise((resolve) => setTimeout(resolve, 2000));
+            const data = new FormData();
+            data.append("form-name", "contact");
+            Object.keys(formData).forEach(key => {
+                data.append(key, formData[key]);
+            });
+
+            await fetch("/", {
+                method: "POST",
+                body: data
+            });
 
             setStatus("success");
             reset();
-
             setTimeout(() => setStatus("idle"), 3000);
         } catch (error) {
             setStatus("error");
             setTimeout(() => setStatus("idle"), 3000);
         }
     };
+
 
     const buttonText = {
         idle: t('contact.form.submit'),
@@ -131,11 +140,21 @@ const Contact = () => {
                                     : t('contact.status.unavailable')}
                             </h3>
 
-                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 h-full flex flex-col">
+                            <form
+                                name="contact"
+                                method="POST"
+                                data-netlify="true"
+                                onSubmit={handleSubmit(onSubmit)}
+                                className="space-y-6 h-full flex flex-col"
+                            >
+                                {/* Campo oculto para que Netlify detecte el form */}
+                                <input type="hidden" name="form-name" value="contact" />
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="flex flex-col gap-1">
                                         <input
                                             {...register("firstName")}
+                                            name="firstName"
                                             placeholder={t('contact.form.firstName')}
                                             className="input"
                                             aria-invalid={!!errors.firstName}
@@ -147,6 +166,7 @@ const Contact = () => {
                                     <div className="flex flex-col gap-1">
                                         <input
                                             {...register("lastName")}
+                                            name="lastName"
                                             placeholder={t('contact.form.lastName')}
                                             className="input"
                                             aria-invalid={!!errors.lastName}
@@ -160,6 +180,7 @@ const Contact = () => {
                                 <div className="flex flex-col gap-1 mt-6">
                                     <input
                                         {...register("email")}
+                                        name="email"
                                         placeholder={t('contact.form.email')}
                                         className="input"
                                         aria-invalid={!!errors.email}
@@ -172,6 +193,7 @@ const Contact = () => {
                                 <div className="flex flex-col gap-1 mt-6">
                                     <input
                                         {...register("subject")}
+                                        name="subject"
                                         placeholder={t('contact.form.subject')}
                                         className="input"
                                         aria-invalid={!!errors.subject}
@@ -184,6 +206,7 @@ const Contact = () => {
                                 <div className="flex flex-col gap-1 mt-6">
                                     <textarea
                                         {...register("message")}
+                                        name="message"
                                         placeholder={t('contact.form.message')}
                                         rows={6}
                                         className="input"
@@ -211,6 +234,7 @@ const Contact = () => {
                                     </span>
                                 </button>
                             </form>
+
                         </div>
                     </div>
                 </div>
