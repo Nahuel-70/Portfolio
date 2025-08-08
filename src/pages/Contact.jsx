@@ -15,7 +15,7 @@ const Contact = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/getAvailability')
+        fetch('/.netlify/functions/getAvailability')
             .then(res => res.json())
             .then(data => {
                 setIsAvailable(data.isAvailable);
