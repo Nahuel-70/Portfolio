@@ -1,0 +1,133 @@
+{
+    "lang-en": "English",
+    "lang-es": "Spanish",
+    "header": {
+        "about": "ABOUT",
+        "skills": "SKILLS",
+        "projects": "PROJECTS",
+        "contact": "CONTACT"
+    },
+    "home": {
+        "title": "I'm",
+        "title-variants": [
+            "a Web Developer",
+            "a Mobile Developer",
+            "a Developer",
+            "Nahuel Gonzalez"
+        ],
+        "subtitle": "Junior & Creative Developer",
+        "button-primary": "VIEW PROJECTS",
+        "button-secondary": "CONTACT"
+    },
+    "about": {
+        "paragraph1": "I'm a <1>junior developer</1> from Argentina, passionate about combining technology and creativity to build innovative solutions. I love turning ideas into functional software while constantly learning and experimenting.",
+        "paragraph2": "I've been exploring how to build <1>web apps</1>, design <3>databases</3>, and develop <5>mobile apps</5>, always focusing on clean code and user experience.",
+        "paragraph3": "Currently diving into modern frameworks and technologies like Flutter and React, building real-world projects that challenge and grow my skills."
+    },
+    "skills": {
+        "title": "SKILLS",
+        "subtitle": "",
+        "web": {
+            "title": "WEB",
+            "description": "Full-stack web development using modern technologies and frameworks for building dynamic and responsive websites.",
+            "tags": {
+                "html": "HTML",
+                "css": "CSS",
+                "js": "JavaScript",
+                "node": "Node.js",
+                "express": "Express.js"
+            }
+        },
+        "mobile": {
+            "title": "MOBILE",
+            "description": "Cross-platform mobile application development using frameworks and tools designed for scalable and high-performance apps.",
+            "tags": {
+                "flutter": "Flutter",
+                "firebase": "Firebase",
+                "android": "Android"
+            }
+        },
+        "database": {
+            "title": "DATABASE",
+            "description": "Experience with relational and non-relational databases for structured data storage, management, and retrieval.",
+            "tags": {
+                "mysql": "MySQL",
+                "mongodb": "MongoDB"
+            }
+        },
+        "tools": {
+            "title": "TOOLS",
+            "description": "Familiar with essential development tools, including version control systems, code editors, and integrated development environments.",
+            "tags": {
+                "git": "Git",
+                "github": "Github",
+                "vscode": "VSCode",
+                "intellijidea": "Intellij Idea"
+            }
+        },
+        "soft-skills": {
+            "title": "SOFT SKILLS",
+            "description": "Core interpersonal and cognitive abilities in team and individual settings.",
+            "tags": {
+                "teamwork": "Teamwork",
+                "creativity": "Creativity",
+                "self-learning": "Self-learning",
+                "problem-solving": "Problem solving"
+            }
+        },
+        "learning": {
+            "title": "LEARNING",
+            "description": "Actively exploring new technologies and frameworks to expand knowledge.",
+            "tags": {
+                "react": "React",
+                "angular": "Angular",
+                "postgresql": "PostgreSQL"
+            }
+        }
+    },
+    "projects": {
+        "title": "PROJECTS",
+        "subtitle": "",
+        "categories": {
+            "all": "All",
+            "web": "Web",
+            "mobile": "Mobile"
+        },
+        "showing": "Showing {{count}} of {{total}} projects",
+        "empty": "No projects available",
+        "empty-category": "No projects found for this category."
+    },
+    "contact": {
+        "title": "CONTACT",
+        "subtitle": "",
+        "status": {
+            "available": "Available for work",
+            "unavailable": "Not available for work"
+        },
+        "form": {
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email Address",
+            "subject": "Subject",
+            "message": "Your Message",
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "success": "Message sent successfully!",
+            "error": "Error sending message. Please try again.",
+            "unavailable": "Not Available",
+            "minLength": "Minimum length is {{length}} characters",
+            "maxLength": "Maximum length is {{length}} characters",
+            "firstNameRequired": "First name is required",
+            "firstNameError": "First name must be at least 2 characters",
+            "lastNameRequired": "Last name is required",
+            "lastNameError": "Last name must be at least 2 characters",
+            "emailRequired": "Email is required",
+            "emailError": "Email must be a valid email address",
+            "emailInvalid": "Please enter a valid email address",
+            "subjectRequired": "Subject is required",
+            "subjectError": "Subject must be at least 3 characters",
+            "messageRequired": "Message is required",
+            "messageError": "Message must be at least 10 characters"
+        }
+    }
+}

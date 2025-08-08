@@ -1,0 +1,117 @@
+{
+    "lang-en": "Inglés",
+    "lang-es": "Español",
+    "header": {
+        "about": "SOBRE MI",
+        "skills": "HABILIDADES",
+        "projects": "PROYECTOS",
+        "contact": "CONTACTO"
+    },
+    "home": {
+        "title": "Soy",
+        "title-variants": [
+            "Desarrollador Web",
+            "Desarrollador Móvil",
+            "Desarrollador",
+            "Nahuel Gonzalez"
+        ],
+        "subtitle": "Desarrollador junior y creativo",
+        "button-primary": "VER PROYECTOS",
+        "button-secondary": "CONTACTAR"
+    },
+    "about": {
+        "paragraph1": "Soy un <1>desarrollador junior</1> de Argentina, apasionado por combinar tecnología y creatividad para construir soluciones innovadoras. Me encanta convertir ideas en software funcional mientras aprendo y experimento constantemente.",
+        "paragraph2": "He estado explorando cómo construir <1>aplicaciones web</1>, diseñar <3>bases de datos</3> y desarrollar <5>aplicaciones móviles</5>, siempre enfocándome en un código limpio y una buena experiencia de usuario.",
+        "paragraph3": "Actualmente estoy aprendiendo frameworks modernos como Flutter y React, construyendo proyectos reales que desafían y mejoran mis habilidades."
+    },
+    "skills": {
+        "title": "HABILIDADES",
+        "subtitle": "",
+        "web": {
+            "title": "WEB",
+            "description": "Desarrollo web full-stack utilizando tecnologías y frameworks modernos para crear sitios dinámicos y responsivos.",
+            "tags": {
+                "html": "HTML",
+                "css": "CSS",
+                "js": "JavaScript",
+                "node": "Node.js",
+                "express": "Express.js"
+            }
+        },
+        "mobile": {
+            "title": "MÓVIL",
+            "description": "Desarrollo de aplicaciones móviles multiplataforma utilizando frameworks y herramientas diseñadas para apps escalables y de alto rendimiento.",
+            "tags": {
+                "flutter": "Flutter",
+                "firebase": "Firebase",
+                "android": "Android"
+            }
+        },
+        "database": {
+            "title": "BASES DE DATOS",
+            "description": "Experiencia con bases de datos relacionales y no relacionales para el almacenamiento, gestión y recuperación estructurada de datos.",
+            "tags": {
+                "mysql": "MySQL",
+                "mongodb": "MongoDB"
+            }
+        },
+        "tools": {
+            "title": "HERRAMIENTAS",
+            "description": "Familiaridad con herramientas esenciales de desarrollo como sistemas de control de versiones, editores de código e IDEs.",
+            "tags": {
+                "git": "Git",
+                "github": "GitHub",
+                "vscode": "VS Code",
+                "intellijidea": "IntelliJ IDEA"
+            }
+        },
+        "soft-skills": {
+            "title": "HABILIDADES BLANDAS",
+            "description": "Habilidades interpersonales y cognitivas clave en entornos de trabajo en equipo e individuales.",
+            "tags": {
+                "teamwork": "Trabajo en equipo",
+                "creativity": "Creatividad",
+                "self-learning": "Autodidacta",
+                "problem-solving": "Resolución de problemas"
+            }
+        },
+        "learning": {
+            "title": "APRENDIZAJE",
+            "description": "Explorando activamente nuevas tecnologías y frameworks para ampliar conocimientos.",
+            "tags": {
+                "react": "React",
+                "angular": "Angular",
+                "postgresql": "PostgreSQL"
+            }
+        }
+    },
+    "projects": {
+        "title": "PROYECTOS",
+        "subtitle": "",
+        "categories": {
+            "all": "Todos",
+            "web": "Web",
+            "mobile": "Móvil"
+        },
+        "showing": "Mostrando {{count}} de {{total}} proyectos",
+        "empty": "No hay proyectos disponibles",
+        "empty-category": "No se encontraron proyectos para esta categoría."
+    },
+    "contact": {
+        "title": "CONTACTO",
+        "subtitle": "",
+        "status": {
+            "available": "Disponible para trabajar",
+            "unavailable": "No disponible para trabajar"
+        },
+        "form": {
+            "firstName": "Nombre",
+            "lastName": "Apellido",
+            "email": "Correo electrónico",
+            "subject": "Asunto",
+            "message": "Tu mensaje",
+            "submit": "Enviar mensaje",
+            "unavailable": "No disponible"
+        }
+    }
+}
