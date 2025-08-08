@@ -4,9 +4,11 @@ const sql = neon();
 
 export const handler = async () => {
   try {
-    const result = await sql`SELECT value FROM settings WHERE key = 'is_available' LIMIT 1`;
+    // Query corregida para tu estructura de tabla
+    const result = await sql`SELECT is_available FROM settings WHERE id = 1 LIMIT 1`;
     
-    const isAvailable = result.length > 0 ? result[0].value === 'true' : false;
+    // Verificar si encontramos el registro
+    const isAvailable = result.length > 0 ? result[0].is_available : false;
     
     return {
       statusCode: 200,
